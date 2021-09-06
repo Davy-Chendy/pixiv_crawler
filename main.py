@@ -7,8 +7,8 @@ import aiohttp
 
 asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy()) # 加上这一行
 
-file_dir = r"D:\Game\setu\pixiv\datasets"
-file_dirs = r"E:\pythonProject\work\pics"
+#存储地址↓
+file_dirs = r"E:\pics"
 
 url = ""
 
@@ -54,30 +54,6 @@ def analyze(text: str) -> str:
                 pass
     return data3
 
-# def operate(file_name: str):
-#     global url
-#     with open(file_name, "r", encoding="utf-8") as f:
-#         analyze(f.read())
-
-# def get_all(cwd: str) -> list:
-#     result = []
-#     get_dir = os.listdir(cwd)
-#     for i in get_dir:
-#         sub_dir = os.path.join(cwd,i)
-#         if os.path.isdir(sub_dir):
-#             get_all(sub_dir)
-#         else:
-#             result.append(i)
-#     return result
-#
-# def get_html(mode: int= -1):
-#     html_list = get_all(os.path.join(file_dir, 'html'))
-#     for i in range(len(html_list)):
-#         if i == mode:
-#             break
-#         operate(os.path.join(file_dir, 'html', html_list[i]))
-#         os.remove(os.path.join(file_dir, 'html', html_list[i]))
-#     print(html_list)
 
 async def Gethttp(url,cookie,download):
     proxy = 'http://127.0.0.1:7890'
@@ -179,8 +155,8 @@ async def Gethttp(url,cookie,download):
 
 # 按间距中的绿色按钮以运行脚本。
 if __name__ == '__main__':
-    #
-    user_id = '9472577'
+    #填写作者id↓
+    user_id = ''
     user_id = user_id.strip()
     #user_name = 'pudding'
     api = 'https://www.pixiv.net/ajax/user/%s/profile/all?lang=zh' % user_id
@@ -192,8 +168,7 @@ if __name__ == '__main__':
     cookie = ''
     cookie = ''
     cookie = ''
-    cookie = 'first_visit_datetime_pc=2021-08-31+17%3A41%3A59; p_ab_id=4; p_ab_id_2=3; p_ab_d_id=34402486; yuid_b=JFcIEDc; _ga=GA1.2.941841170.1630399323; PHPSESSID=58756695_j3g2IaSymOAljtkbqWpYm9s2Wpp8WlFG; device_token=9ce1dcea8066414b03e501900c052f70; c_type=26; privacy_policy_agreement=0; privacy_policy_notification=0; a_type=0; b_type=1; _im_vid=01FEDNZ17X1YYV3F2DKZ24RY9M; _im_uid.3929=b.e768ad1129a56b98; adr_id=uIxaYBQiFDRzAhDw9bx2fUyw8zPvme9MSHuWDIMUpf0jTzTj; ki_s=; ki_r=; __cf_bm=N72FOLP8CNHkRn1LqMTJ_kAB0A3dAeiWrB0R0QcTiQI-1630756030-0-AUG1vrARj+ORV7WgAUSG607k9AIiW5PV8lLL3qZbDspDJDOjzArCZDnwhEwHvA4zPy/u2SPLuEBvf1F/01vP2bKREMrCQn4Jc5HeVpl5duz6k14r0GsgqWT+ErPiuyZ3GN3DTyOOKC0fi3tGl/xkKKqouNUuklK+QWj3aLraw6c3vXcE8ZLx1294QtqtIiILRg==; login_ever=yes; _gcl_au=1.1.733999351.1630756321; tag_view_ranking=Lt-oEicbBr~jH0uD88V6F~RTJMXD26Ak~tgP8r-gOe_~1m8UkUR-IC~HHAvWENeAu~HnJ0MouDn0~zyKU3Q5L4C~L58xyNakWW~30YRghWWsb~_pwIgrV8TB~rsb55I7upx; ki_t=1630399331798%3B1630756030493%3B1630756884701%3B2%3B15'
-
+    #填写需要的cookie↑
 
 
 
